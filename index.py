@@ -28,8 +28,8 @@ def check_found_file(filename):
 def sendToFtp():
     cfg = configparser.ConfigParser()
     if check_found_file('config.ini'):
-         cfg.read('config.ini')
-    else
+        cfg.read('config.ini')
+    else:
         print('Отсутствует файл настроек!')
     host = cfg['FTP']['host']
     user = cfg['FTP']['user']
@@ -58,7 +58,7 @@ def parse():
     i = []
     if check_found_file(tmp + '/2.docx'):
         doc = docx2txt.process(tmp + '/2.docx')
-    else
+    else:
         print('Отсутствует файл docx!!!')
     for it in doc.splitlines():
         if it == '':
