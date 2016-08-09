@@ -12,6 +12,7 @@ app.secret_key = 'dmitriy'
 tmp = os.curdir + '/tmp'
 
 
+
 def sendToFtp():
     cfg = configparser.ConfigParser()
     cfg.read('config.ini')
