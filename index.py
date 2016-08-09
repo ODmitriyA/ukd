@@ -12,9 +12,25 @@ app.secret_key = 'dmitriy'
 tmp = os.curdir + '/tmp'
 
 
+def check_found_file(filename):
+    """
+    Проверка существования файла
+    """
+    try:
+        file = open(filename)
+    except IOError as e:
+        return False
+    else:
+        with file:
+            return True
+
+
 def sendToFtp():
     cfg = configparser.ConfigParser()
-    cfg.read('config.ini')
+    if check_found_file('config.ini'):
+         cfg.read('config.ini')
+    else
+        print('Отсутствует файл настроек!')
     host = cfg['FTP']['host']
     user = cfg['FTP']['user']
     passwd = cfg['FTP']['passwd']
@@ -40,7 +56,10 @@ def sendToFtp():
 
 def parse():
     i = []
-    doc = docx2txt.process(tmp + '/2.docx')
+    if check_found_file(tmp + '/2.docx'):
+        doc = docx2txt.process(tmp + '/2.docx')
+    else
+        print('Отсутствует файл docx!!!')
     for it in doc.splitlines():
         if it == '':
             continue
