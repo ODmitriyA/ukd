@@ -1,0 +1,40 @@
+<p>
+<script>// <![CDATA[
+var st=document.getElementById("tdLeft");
+var cont=document.getElementById("content");
+var tit=document.querySelector(".title");
+st.hidden=true;
+cont.style.margin="0";
+tit.style.textAlign = "justify";
+// ]]></script>
+</p>
+{% for it in parsed %}
+    {% if it.get('paragraph') %}
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 14pt;">{{ it['paragraph'] }}</span></p>
+    {% else %}
+        <table style="margin-left: auto; margin-right: auto;">
+            <tbody>
+                <tr>
+                {% for i in it['photo'] %}
+                    <td><img src="{{ i }}"{% if it['size'] >= 2 %}; width="300"{% endif %}></img></td>
+                {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+    {% endif %}
+{% endfor %}
+<div><img style="position: absolute; left: -9999px;" src="http://mc.yandex.ru/watch/24665882" alt="" /></div>
+<table>
+<tbody>
+<tr>
+<td>
+<p><span style="font-size: 14pt;"><a href="http://vkontakte.ru/share.php?url=http://ukdemidov.ru/novosti/problemyi_reshaem_vmeste" target="_blank"><img src="files/img/vk32.png" alt="" /></a></span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-size: 14pt;"><a href="https://metrika.yandex.ru/stat/?id=24665882&amp;from=informer" target="_blank" rel="nofollow"><img style="width: 88px; height: 31px; border: 0;" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" src="http://bs.yandex.ru/informer/24665882/3_1_FFFFFFFF_EFEFEFFF_0_pageviews" alt="Яндекс.Метрика" /></a></span></p>
+</td>
+<!-- /Yandex.Metrika counter --></tr>
+</tbody>
+</table>

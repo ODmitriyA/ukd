@@ -1,0 +1,14 @@
+<h1>Проект UKD</h1>
+<form action="/upload" method="post" enctype="multipart/form-data">
+  Выберите файл: <input type="file" name="down" />
+  <input type="submit" value="Загрузить архив" />
+</form>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
