@@ -1,0 +1,8 @@
+Include/*
+Lib/*
+Scripts/*
+/*.json
+/*.cfg
+.vscode/*
+/*.ini
+tmp/*
