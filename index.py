@@ -31,9 +31,9 @@ def sendToFtp():
         cfg.read('config.ini')
     else:
         print('Отсутствует файл настроек!')
-    host = cfg['FTP']['host'][1:-1]
-    user = cfg['FTP']['user'][1:-1]
-    passwd = cfg['FTP']['passwd'][1:-1]
+    host = cfg['FTP']['host']
+    user = cfg['FTP']['user']
+    passwd = cfg['FTP']['passwd']
     dsk = ftplib.FTP(
         host=host,
         user=user,
