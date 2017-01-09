@@ -4,3 +4,4 @@
 .vscode/*
 /*.ini
 tmp/*
+__pycache__/*
